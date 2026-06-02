@@ -1,18 +1,29 @@
-# CleanPaste
+<p align="center">
+  <img src="Icon.png" alt="CleanPaste icon" width="140">
+</p>
 
-CleanPaste is a small macOS menu bar app that cleans messy text copied from PDFs.
+<h1 align="center">CleanPaste</h1>
 
-## Download
+<p align="center">
+  A tiny macOS menu bar app that cleans messy text copied from PDFs.
+</p>
 
-Download the DMG file from this repository:
+<p align="center">
+  <a href="dist/CleanPaste-1.0.dmg?raw=1">
+    <img src="https://img.shields.io/badge/Download-CleanPaste--1.0.dmg-blue?style=for-the-badge" alt="Download CleanPaste">
+  </a>
+</p>
 
-[dist/CleanPaste-1.0.dmg](dist/CleanPaste-1.0.dmg)
+## Install
 
-Open the DMG, then drag `CleanPaste.app` into `Applications`.
+1. Click the **Download** button above.
+2. Open `CleanPaste-1.0.dmg`.
+3. Drag `CleanPaste.app` into `Applications`.
+4. Launch CleanPaste from Applications, Spotlight, or Launchpad.
 
-After installing, launch CleanPaste from Applications, Spotlight, or Launchpad. It appears in the macOS menu bar.
+CleanPaste appears in the macOS menu bar. It does not open a normal window.
 
-## How To Use
+## Use
 
 1. Copy text from a PDF.
 2. Click the CleanPaste icon in the menu bar.
@@ -23,13 +34,11 @@ CleanPaste replaces your clipboard text with the cleaned version.
 
 ## What It Fixes
 
-CleanPaste can:
-
-- Join words split across PDF line breaks
-- Join broken lines into normal paragraphs
-- Keep real paragraph breaks
-- Remove extra spaces
-- Fix spaces before punctuation
+- Words split by PDF line breaks
+- Broken lines inside paragraphs
+- Extra spaces
+- Spaces before punctuation
+- Paragraph breaks
 
 Example:
 
@@ -48,24 +57,18 @@ We'd be overwhelmed with an avalanche of thoughts and emotions. We'd have too mu
 
 ## For Developers
 
-To build a new DMG:
+Build a new DMG:
 
 ```bash
 ./scripts/package_release.sh
 ```
 
-The output will be:
+Output:
 
 ```text
 dist/CleanPaste-1.0.dmg
 ```
 
-To build a different version name:
-
-```bash
-./scripts/package_release.sh 1.1
-```
-
 The app icon comes from `Icon.png`.
 
-Note: this app is locally signed. For a fully public macOS release without Gatekeeper warnings, sign it with an Apple Developer ID certificate and notarize it with Apple.
+Note: this app is locally signed. For a public macOS release without Gatekeeper warnings, sign it with an Apple Developer ID certificate and notarize it with Apple.
