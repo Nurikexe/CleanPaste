@@ -9,15 +9,15 @@
 </p>
 
 <p align="center">
-  <a href="https://raw.githubusercontent.com/Nurikexe/CleanPaste/main/dist/CleanPaste-1.0.dmg">
-    <img src="https://img.shields.io/badge/Download-CleanPaste--1.0.dmg-blue?style=for-the-badge" alt="Download CleanPaste">
+  <a href="https://raw.githubusercontent.com/Nurikexe/CleanPaste/main/dist/CleanPaste-1.1.dmg">
+    <img src="https://img.shields.io/badge/Download-CleanPaste--1.1.dmg-blue?style=for-the-badge" alt="Download CleanPaste">
   </a>
 </p>
 
 ## Install
 
 1. Click the **Download** button above.
-2. Open `CleanPaste-1.0.dmg`.
+2. Open `CleanPaste-1.1.dmg`.
 3. Drag `CleanPaste.app` into `Applications`.
 4. Launch CleanPaste from Applications, Spotlight, or Launchpad.
 
@@ -66,7 +66,7 @@ Build a new DMG:
 Output:
 
 ```text
-dist/CleanPaste-1.0.dmg
+dist/CleanPaste-1.1.dmg
 ```
 
 The app icon comes from `Icon.png`.
