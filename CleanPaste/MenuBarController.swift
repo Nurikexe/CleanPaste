@@ -6,6 +6,7 @@ final class MenuBarController: NSObject {
     private let clipboardManager: ClipboardManager
     private let textCleaner: TextCleaner
     private var messageWindow: NSWindow?
+    private var settingsWindow: NSWindow?
 
     init(
         clipboardManager: ClipboardManager = ClipboardManager(),
@@ -64,8 +65,25 @@ final class MenuBarController: NSObject {
     }
 
     @objc private func openSettings() {
+        let window = settingsWindow ?? makeSettingsWindow()
+        settingsWindow = window
+
         NSApp.activate(ignoringOtherApps: true)
-        NSApp.sendAction(Selector(("showSettingsWindow:")), to: nil, from: nil)
+        window.center()
+        window.makeKeyAndOrderFront(nil)
+    }
+
+    private func makeSettingsWindow() -> NSWindow {
+        let window = NSWindow(
+            contentRect: NSRect(x: 0, y: 0, width: 360, height: 150),
+            styleMask: [.titled, .closable, .miniaturizable],
+            backing: .buffered,
+            defer: false
+        )
+        window.title = "CleanPaste Settings"
+        window.contentView = NSHostingView(rootView: SettingsView())
+        window.isReleasedWhenClosed = false
+        return window
     }
 
     @objc private func quit() {
