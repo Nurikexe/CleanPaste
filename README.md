@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-  <a href="dist/CleanPaste-1.0.dmg?raw=1">
+  <a href="https://raw.githubusercontent.com/Nurikexe/CleanPaste/main/dist/CleanPaste-1.0.dmg">
     <img src="https://img.shields.io/badge/Download-CleanPaste--1.0.dmg-blue?style=for-the-badge" alt="Download CleanPaste">
   </a>
 </p>
