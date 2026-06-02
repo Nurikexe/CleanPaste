@@ -6,6 +6,8 @@ PROJECT_PATH="$ROOT_DIR/CleanPaste.xcodeproj"
 SCHEME="CleanPaste"
 CONFIGURATION="Release"
 VERSION="${1:-1.0}"
+ICON_SOURCE="$ROOT_DIR/Icon.png"
+APPICON_DIR="$ROOT_DIR/CleanPaste/Assets.xcassets/AppIcon.appiconset"
 
 BUILD_DIR="$ROOT_DIR/build"
 DERIVED_DATA_PATH="$BUILD_DIR/DerivedData"
@@ -15,7 +17,14 @@ APP_PATH="$DERIVED_DATA_PATH/Build/Products/$CONFIGURATION/CleanPaste.app"
 DMG_PATH="$DIST_DIR/CleanPaste-$VERSION.dmg"
 
 rm -rf "$DERIVED_DATA_PATH" "$DMG_STAGING_DIR"
-mkdir -p "$DIST_DIR" "$DMG_STAGING_DIR"
+mkdir -p "$DIST_DIR" "$DMG_STAGING_DIR" "$APPICON_DIR" "$BUILD_DIR/icon"
+
+if [[ -f "$ICON_SOURCE" ]]; then
+  sips -s format png --cropToHeightWidth 1024 1024 "$ICON_SOURCE" --out "$BUILD_DIR/icon/source-square.png" >/dev/null
+  for size in 16 32 64 128 256 512 1024; do
+    sips -z "$size" "$size" "$BUILD_DIR/icon/source-square.png" --out "$APPICON_DIR/AppIcon-${size}.png" >/dev/null
+  done
+fi
 
 xcodebuild \
   -project "$PROJECT_PATH" \

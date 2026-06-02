@@ -1,31 +1,35 @@
 # CleanPaste
 
-CleanPaste is a simple native macOS menu bar app for cleaning messy text copied from PDFs.
+CleanPaste is a small macOS menu bar app that cleans messy text copied from PDFs.
 
-It reads the current clipboard text, fixes common PDF copy/paste formatting issues, and writes the cleaned text back to the clipboard.
+## Download
 
-## Features
+Download the DMG file from this repository:
 
-- Lives in the macOS menu bar
-- Does not open a main window on launch
-- Cleans the current clipboard text
-- Replaces the clipboard with the cleaned version
-- Shows a small confirmation message: `Clipboard cleaned`
+[dist/CleanPaste-1.0.dmg](dist/CleanPaste-1.0.dmg)
 
-## Menu Items
+Open the DMG, then drag `CleanPaste.app` into `Applications`.
 
-- `Clean Clipboard`
-- `Quit`
+After installing, launch CleanPaste from Applications, Spotlight, or Launchpad. It appears in the macOS menu bar.
 
-## Text Cleaning
+## How To Use
 
-CleanPaste applies these rules:
+1. Copy text from a PDF.
+2. Click the CleanPaste icon in the menu bar.
+3. Click `Clean Clipboard`.
+4. Paste the cleaned text anywhere.
 
-- Fixes words broken by PDF line breaks
-- Joins broken lines into normal paragraphs
-- Keeps paragraph breaks
-- Removes extra spaces
-- Fixes spaces before punctuation
+CleanPaste replaces your clipboard text with the cleaned version.
+
+## What It Fixes
+
+CleanPaste can:
+
+- Join words split across PDF line breaks
+- Join broken lines into normal paragraphs
+- Keep real paragraph breaks
+- Remove extra spaces
+- Fix spaces before punctuation
 
 Example:
 
@@ -42,77 +46,26 @@ Becomes:
 We'd be overwhelmed with an avalanche of thoughts and emotions. We'd have too much data.
 ```
 
-## Project Structure
+## For Developers
 
-```text
-CleanPaste/
-  CleanPasteApp.swift
-  MenuBarController.swift
-  ClipboardManager.swift
-  TextCleaner.swift
-  Assets.xcassets/
-
-CleanPaste.xcodeproj/
-```
-
-## Requirements
-
-- macOS
-- Xcode
-- Swift / SwiftUI
-
-## Run Locally
-
-1. Open `CleanPaste.xcodeproj` in Xcode.
-2. Select the `CleanPaste` scheme.
-3. Press `Cmd + R` to run.
-4. Look for the CleanPaste icon in the macOS menu bar.
-
-The app will not open a normal window.
-
-## Install As An App
-
-After building in Xcode:
-
-1. In Xcode, choose `Product` -> `Show Build Folder in Finder`.
-2. Open `Products/Release` or `Products/Debug`.
-3. Drag `CleanPaste.app` into `/Applications`.
-
-After that, CleanPaste can be launched like a normal macOS app without opening Xcode.
-
-## Create A DMG
-
-To create a downloadable DMG for users who do not have Xcode:
+To build a new DMG:
 
 ```bash
 ./scripts/package_release.sh
 ```
 
-The DMG will be created at:
+The output will be:
 
 ```text
 dist/CleanPaste-1.0.dmg
 ```
 
-You can pass a different version name:
+To build a different version name:
 
 ```bash
 ./scripts/package_release.sh 1.1
 ```
 
-That creates:
+The app icon comes from `Icon.png`.
 
-```text
-dist/CleanPaste-1.1.dmg
-```
-
-The DMG contains `CleanPaste.app` and an `Applications` shortcut, so users can drag the app into Applications.
-
-Note: this creates a locally signed app. For a public release without macOS Gatekeeper warnings, the app should be signed with an Apple Developer ID certificate and notarized by Apple.
-
-## Usage
-
-1. Copy text from a PDF.
-2. Click the CleanPaste icon in the macOS menu bar.
-3. Click `Clean Clipboard`.
-4. Paste the cleaned text wherever you need it.
+Note: this app is locally signed. For a fully public macOS release without Gatekeeper warnings, sign it with an Apple Developer ID certificate and notarize it with Apple.
