@@ -39,6 +39,12 @@ final class MenuBarController: NSObject {
 
         menu.addItem(NSMenuItem.separator())
 
+        let settingsItem = NSMenuItem(title: "Settings...", action: #selector(openSettings), keyEquivalent: ",")
+        settingsItem.target = self
+        menu.addItem(settingsItem)
+
+        menu.addItem(NSMenuItem.separator())
+
         let quitItem = NSMenuItem(title: "Quit", action: #selector(quit), keyEquivalent: "q")
         quitItem.target = self
         menu.addItem(quitItem)
@@ -55,6 +61,11 @@ final class MenuBarController: NSObject {
         let cleanedText = textCleaner.clean(clipboardText)
         clipboardManager.writeText(cleanedText)
         showMessage("Clipboard cleaned")
+    }
+
+    @objc private func openSettings() {
+        NSApp.activate(ignoringOtherApps: true)
+        NSApp.sendAction(Selector(("showSettingsWindow:")), to: nil, from: nil)
     }
 
     @objc private func quit() {

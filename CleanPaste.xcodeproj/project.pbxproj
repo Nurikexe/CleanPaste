@@ -12,6 +12,7 @@
 		1A2B3C4D5E6F700000000003 /* ClipboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F700000000013 /* ClipboardManager.swift */; };
 		1A2B3C4D5E6F700000000004 /* TextCleaner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F700000000014 /* TextCleaner.swift */; };
 		1A2B3C4D5E6F700000000005 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F700000000015 /* Assets.xcassets */; };
+		1A2B3C4D5E6F700000000006 /* LaunchAtLoginSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F700000000016 /* LaunchAtLoginSettings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		1A2B3C4D5E6F700000000013 /* ClipboardManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipboardManager.swift; sourceTree = "<group>"; };
 		1A2B3C4D5E6F700000000014 /* TextCleaner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextCleaner.swift; sourceTree = "<group>"; };
 		1A2B3C4D5E6F700000000015 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1A2B3C4D5E6F700000000016 /* LaunchAtLoginSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchAtLoginSettings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 				1A2B3C4D5E6F700000000012 /* MenuBarController.swift */,
 				1A2B3C4D5E6F700000000013 /* ClipboardManager.swift */,
 				1A2B3C4D5E6F700000000014 /* TextCleaner.swift */,
+				1A2B3C4D5E6F700000000016 /* LaunchAtLoginSettings.swift */,
 				1A2B3C4D5E6F700000000015 /* Assets.xcassets */,
 			);
 			path = CleanPaste;
@@ -135,6 +138,7 @@
 				1A2B3C4D5E6F700000000002 /* MenuBarController.swift in Sources */,
 				1A2B3C4D5E6F700000000003 /* ClipboardManager.swift in Sources */,
 				1A2B3C4D5E6F700000000004 /* TextCleaner.swift in Sources */,
+				1A2B3C4D5E6F700000000006 /* LaunchAtLoginSettings.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
